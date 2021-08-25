@@ -1,0 +1,254 @@
+/* ======================= RESET ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+/* ======================= GENERAL ========================== */
+html {
+    font-family: sans-serif;
+    background: #fafafa;
+    color: #050512;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+}
+
+/* ====================== HEADER ======================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 4rem;
+    background: #FFF;
+
+    border-bottom: 1px solid #DADAFA;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+header nav ul li {
+    font-size: 1.25rem;
+}
+
+header nav ul li a {
+    color: #050520;
+    transition: ease .2s;
+}
+
+header nav ul li a:hover {
+    color: #5555FA;
+}
+
+/* ====================== LEFT ======================= */
+.left {
+    width: calc(50vw - 5rem);
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 1rem 2.5rem 0;
+    gap: 1rem;
+}
+
+.left.events {
+    width: 70vw;
+}
+
+.left h2 {
+    font-size: 2rem;
+}
+
+.left table {
+    width: calc(60vw - 5rem);
+    padding: 1rem;
+    overflow: scroll;
+}
+
+.left #listDiv table tbody {
+    display: block;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.left table tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.left thead tr {
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+}
+
+.left table td,
+.left table th {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.left table td.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.left table td.actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 5rem;
+    height: 2rem;
+
+    border-radius: 0.25rem;
+
+    font-size: .9rem;
+    font-weight: 500;
+
+    transition: .2s ease;
+}
+
+.left table td.actions a:nth-child(1) {
+    border: 2px solid #5555FA;
+    color: #5555FA;
+}
+
+.left table td.actions a:nth-child(2) {
+    border: 2px solid #FA5555;
+    color: #FA5555;
+}
+
+.left table td.actions a:hover {
+    filter: brightness(1.5);
+}
+
+.left table td.bands {
+    display: flex;
+    flex-direction: column;
+    gap: .125rem;
+    font-size: .85rem;
+}
+
+/* ====================== RIGHT ======================= */
+
+.right {
+    width: calc(50vw - 5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.right.events {
+    width: 40vw;
+}
+
+#formDiv h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.right form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    width: 16rem;
+}
+
+.right form .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.right form .input-group label {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.right form input {
+    height: 2rem;
+    outline: none;
+    border: 2px solid #DADAFA;
+    border-radius: .25rem;
+    padding: 0 .25rem;
+}
+
+.right form input:focus {
+    border: 2px solid #5555FA;
+}
+
+.right form button {
+    height: 2rem;
+    border: 2px solid #5555FA;
+    font-weight: bold;
+    background: none;
+    border-radius: .25rem;
+    color: #5555FA;
+    transition: 0.2s ease;
+}
+
+.right form button:hover {
+    background: #5555FA;
+    color: #FAFAFA;
+}
+
+#messages {
+    color: #22BA22;
+    animation: 1.5s linear message;
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+@keyframes message {
+    from {
+        display: flex;
+        content-visibility: visible;
+    }
+
+    to {
+        display: none;
+        content-visibility: hidden;
+    }
+}
