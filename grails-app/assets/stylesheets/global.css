@@ -188,7 +188,7 @@ header nav ul li a:hover {
     margin-bottom: 1.5rem;
 }
 
-.right form {
+form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -196,18 +196,18 @@ header nav ul li a:hover {
     width: 16rem;
 }
 
-.right form .input-group {
+form .input-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
 }
 
-.right form .input-group label {
+form .input-group label {
     font-size: 0.8rem;
     font-weight: 500;
 }
 
-.right form input {
+form input {
     height: 2rem;
     outline: none;
     border: 2px solid #DADAFA;
@@ -215,11 +215,11 @@ header nav ul li a:hover {
     padding: 0 .25rem;
 }
 
-.right form input:focus {
+form input:focus {
     border: 2px solid #5555FA;
 }
 
-.right form button {
+form button {
     height: 2rem;
     border: 2px solid #5555FA;
     font-weight: bold;
@@ -229,7 +229,7 @@ header nav ul li a:hover {
     transition: 0.2s ease;
 }
 
-.right form button:hover {
+form button:hover {
     background: #5555FA;
     color: #FAFAFA;
 }
@@ -251,4 +251,31 @@ header nav ul li a:hover {
         display: none;
         content-visibility: hidden;
     }
+}
+
+/* ====================== CENTER ======================= */
+
+.center {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+
+    height: max-content;
+    width: 30rem;
+    background: #FFF;
+    border: 1px solid lightgray;
+
+    padding: 2rem;
+    border-radius: .25rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center h2 {
+    text-align: center;
+    margin-bottom: 1rem;
 }

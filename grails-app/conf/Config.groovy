@@ -116,7 +116,6 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 }
 
-
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'core.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'core.UserRole'
@@ -129,6 +128,18 @@ grails.plugin.springsecurity.dao.hideUserNotFoundExceptions = false
 grails.plugin.springsecurity.adh.errorPage="/j_spring_security_logout"
 grails.plugin.springsecurity.password.algorithm = 'SHA-256'
 
+grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
+
+grails.plugin.springsecurity.interceptUrlMap = [
+        '/band': ['ROLE_USER', 'ROLE_ADMIN'],
+        '/band/index': ['ROLE_USER', 'ROLE_ADMIN'],
+        '/event': ['ROLE_USER', 'ROLE_ADMIN'],
+        '/event/index': ['ROLE_USER', 'ROLE_ADMIN'],
+        '/strictArea/login': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/user': ['ROLE_ADMIN'],
+        '/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
+]
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
@@ -139,21 +150,3 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']
 ]
-
-
-
-// Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'core.User'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'core.UserRole'
-grails.plugin.springsecurity.authority.className = 'core.Role'
-grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                              ['permitAll'],
-	'/index':                         ['permitAll'],
-	'/index.gsp':                     ['permitAll'],
-	'/assets/**':                     ['permitAll'],
-	'/**/js/**':                      ['permitAll'],
-	'/**/css/**':                     ['permitAll'],
-	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll']
-]
-
